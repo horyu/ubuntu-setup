@@ -46,10 +46,11 @@ puts "change shell"
 chsh -s $(which zsh)
 
 puts "set DOTFILES"
+HERE=$(cd `dirname $0` && pwd)
 DOTFILES=( .fzf.zsh .gemrc .pryrc .selected_editor .vimrc .zshenv .zshrc )
 for f in ${DOTFILES[@]}; do
-  mv -fv $HOME/ubuntu-setup/$f $HOME
-  # ln -sfv $HOME/ubuntu-setup/$f $HOME
+  mv -fv $HERE/$f $HOME
+  # ln -sfv $HERE/$f $HOME
 done
 
 while true; do
