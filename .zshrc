@@ -47,10 +47,10 @@ alias rl='exec $SHELL -l'
 alias tree='tree -C'
 alias grep='grep --color=always'
 alias l='ls --color=always'
-alias la='ls -a --color=always'
-alias ll='ls -l --color=always'
-alias lsa='ls -al --color=always'
-alias ldot='ls -d --color=always .?*'
+alias la='l -a'
+alias ll='l -l'
+alias lsa='l -al'
+alias ldot='l -d .?*'
 
 alias api="sudo apt install"
 alias apc="sudo apt clean"
