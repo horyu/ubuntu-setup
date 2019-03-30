@@ -9,7 +9,7 @@ sudo rm -f /var/cache/apt/archives/lock
 sudo rm -f /var/lib/dpkg/lock*
 
 sudo apt update && sudo apt upgrade -y
-sudo apt install -y git tree curl zsh vim
+sudo apt install -y git tree curl zsh vim zip unzip
 sudo apt install -y build-essential libssl-dev libreadline-dev zlib1g-dev
 
 puts "install fzf"
