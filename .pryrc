@@ -15,6 +15,12 @@ class String
   end
 end
 
+class Array
+  def jot
+    join(T)
+  end
+end
+
 def url_read(url)
   open(url).read
 end
