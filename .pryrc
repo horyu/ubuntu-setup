@@ -22,5 +22,11 @@ class Array
 end
 
 def url_read(url)
+  require 'open-uri' unless defined? OpenURI
   open(url).read
+end
+
+def url_parse(url)
+  require 'nokogiri' unless defined? Nokogiri
+  Nokogiri::HTML.parse(url_read(url))
 end
