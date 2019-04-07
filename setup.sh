@@ -27,7 +27,7 @@ puts "install rbenv"
 while true; do
   echo -n "Do you want to install rbenv and ruby?  ([y]/n) "
   read -n1 ans
-  if [ "${ans}" == "" ] || [ "${ans}" == "y" ] || [ "${ans}" == "Y" ]; then
+  if [[ $ans =~ ^(y|Y|)$ ]]; then
     anyenv install rbenv
     source ~/.profile
     anyenv install --init
@@ -37,7 +37,7 @@ while true; do
       rbenv global $tag_ver
     fi
     break
-  elif [ "${ans}" == "n" ]; then
+  elif [ $ans == "n" ]; then
     break
   fi
 done
@@ -54,11 +54,12 @@ for f in ${DOTFILES[@]}; do
 done
 
 while true; do
-  echo -n "Do you want to reboot?  ([y]/n) "
+  echo -en "\nDo you want to reboot?  ([y]/n) "
   read -n1 ans
-  if [ "${ans}" == "" ] || [ "${ans}" == "y" ] || [ "${ans}" == "Y" ]; then
-    sudo reboot
-  elif [ "${ans}" == "n" ]; then
+  if [[ $ans =~ ^(y|Y|)$ ]]; then
+    echo 1
+  elif [ $ans == "n" ]; then
     break
   fi
 done
+
