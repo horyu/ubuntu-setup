@@ -57,7 +57,7 @@ while true; do
   echo -en "\nDo you want to reboot?  ([y]/n) "
   read -n1 ans
   if [[ $ans =~ ^(y|Y|)$ ]]; then
-    echo 1
+    sudo reboot
   elif [ $ans == "n" ]; then
     break
   fi
