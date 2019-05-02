@@ -8,23 +8,23 @@ bindkey "^[[4~" end-of-line
 bindkey "^[[3~" delete-char
 bindkey "^[[1;5C"  forward-word
 bindkey "^[[1;5D"  backward-word
+# bindkey "\eOD"  backward-word
+# bindkey "\eOC"  forward-word
 
 # 色を使用
-autoload -Uz colors
-colors
+autoload -Uz colors; colors
 # プロンプト
 PROMPT="%{${fg[green]}%}[%d]%{${reset_color}%}
 "
-
-# Ctrl+Dでログアウトしてしまうことを防ぐ
-setopt IGNOREEOF
 # 日本語を使用
 export LANG=ja_JP.UTF-8
+
+# Ctrl+Dによるログアウトを防ぐ
+setopt ignore_eof
 # ディレクトリ名だけでcdする
 setopt auto_cd
 # 補完
-autoload -Uz compinit
-compinit
+autoload -Uz compinit; compinit
 # 補完候補を ←↓↑→ でも選択出来るようにする
 zstyle ':completion:*:default' menu select=1
 # 補完候補一覧をカラー表示
@@ -42,7 +42,6 @@ setopt hist_save_no_dups
 setopt share_history
 
 # エイリアス
-alias p='ps auf'
 alias rl='exec $SHELL -l'
 alias tree='tree -C'
 alias grep='grep --color=always'
@@ -51,13 +50,19 @@ alias la='l -a'
 alias ll='l -l'
 alias lsa='l -al'
 alias ldot='l -d .?*'
+alias p='ps auf'
+
+alias -g WC=' | wc '
 
 alias api="sudo apt install"
 alias apc="sudo apt clean"
-alias apr="sudo apt remove"
+alias apa="sudo apt autoclean"
 alias app="sudo apt purge"
-alias apac="sudo apt autoclean"
+alias apr="sudo apt remove"
 alias apar="sudo apt autoremove"
+alias apu="sudo apt update"
+alias apug="sudo apt upgrade"
+alias apud="sudo apt update && sudo apt dist-upgrade"
 alias apuu="sudo apt update && sudo apt upgrade"
 alias apuuy="sudo apt update && sudo apt upgrade -y"
 
@@ -80,7 +85,7 @@ bindkey '^K' my-clear
 
 # 無入力Enterでls
 function do_enter() {
-  if [ -z "$BUFFER" ]; then
+  if [ -z $BUFFER ]; then
     ls --color=always
   fi
   zle accept-line
