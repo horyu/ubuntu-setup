@@ -49,7 +49,7 @@ alias l='ls --color=always'
 alias la='l -a'
 alias ll='l -l'
 alias lsa='l -al'
-alias ldot='l -d .?*'
+alias ldot='l -d .?* 2>/dev/null'
 alias p='ps auf'
 
 alias -g WC=' | wc '
