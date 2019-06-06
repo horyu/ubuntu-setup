@@ -22,6 +22,8 @@ echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.profile
 echo 'eval "$(anyenv init -)"' >> ~/.profile
 source ~/.profile
 anyenv install --init
+mkdir -p $(anyenv root)/plugins
+git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
 
 puts "install rbenv"
 while true; do
