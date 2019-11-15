@@ -45,10 +45,10 @@ setopt share_history
 alias rl='exec $SHELL -l'
 alias tree='tree -C'
 alias grep='grep --color=always'
-alias l='ls --color=always'
-alias la='l -a'
+alias l='ls -F --color=always'
+alias la='l -A'
 alias ll='l -l'
-alias lsa='l -al'
+alias lsa='l -Al'
 alias ldot='l -d .?* 2>/dev/null'
 alias p='ps auf'
 
