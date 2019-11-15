@@ -86,7 +86,7 @@ bindkey '^K' my-clear
 # 無入力Enterでls
 function do_enter() {
   if [ -z $BUFFER ]; then
-    ls --color=always
+    ls -F --color=always
   fi
   zle accept-line
 }
