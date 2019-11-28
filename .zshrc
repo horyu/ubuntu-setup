@@ -93,6 +93,15 @@ function do_enter() {
 zle -N do_enter
 bindkey '^m' do_enter
 
+# 直前のコマンドを実行
+function repeat_last_command() {
+  zle push-line
+  BUFFER='!!'
+  zle accept-line
+}
+zle -N repeat_last_command
+bindkey '^J' repeat_last_command
+
 # Ctrl+S（画面出力の停止）を禁止
 if [[ -t 0 ]]; then
   stty stop undef
