@@ -96,7 +96,7 @@ bindkey '^m' do_enter
 # 直前のコマンドを実行
 function repeat_last_command() {
   zle push-line
-  BUFFER='!!'
+  BUFFER=`fc -ln -1` 
   zle accept-line
 }
 zle -N repeat_last_command
