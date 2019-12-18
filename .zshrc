@@ -100,7 +100,7 @@ function repeat_last_command() {
   zle accept-line
 }
 zle -N repeat_last_command
-bindkey '^J' repeat_last_command
+bindkey '^G' repeat_last_command
 
 # Ctrl+S（画面出力の停止）を禁止
 if [[ -t 0 ]]; then
