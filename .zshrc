@@ -43,6 +43,7 @@ setopt share_history
 
 # エイリアス
 alias rl='exec $SHELL -l'
+alias rmrf='rm -rf'
 alias tree='tree -C'
 alias grep='grep --color=always'
 alias l='ls -F --color=always'
