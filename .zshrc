@@ -42,6 +42,7 @@ setopt hist_save_no_dups
 setopt share_history
 
 # エイリアス
+alias sudo='sudo '
 alias rl='exec $SHELL -l'
 alias rmrf='rm -rf'
 alias tree='tree -C'
