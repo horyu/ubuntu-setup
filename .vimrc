@@ -1,11 +1,14 @@
+
+" 内部文字コード
+set encoding=utf-8
+scriptencoding utf-8
+
 " 特殊キーの有効化
 set nocompatible
 " 削除キーのなにか
 set backspace=indent,eol,start
 " 左右のカーソル移動で行間移動可能にする
 set whichwrap=b,s,<,>,[,]
-"文字コードをUFT-8に設定
-set fenc=utf-8
 " バックアップファイルを作らない
 set nobackup
 " スワップファイルを作らない
@@ -30,8 +33,9 @@ set laststatus=2
 set wildmode=list:longest
 
 " Tab系
-" 不可視文字を可視化(タブが「▸-」と表示される)
-set list listchars=tab:\▸\-
+" 不可視文字を可視化(タブが「»-」と表示される)
+set list
+set listchars=tab:»-,trail:-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
