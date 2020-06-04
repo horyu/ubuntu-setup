@@ -53,6 +53,7 @@ alias lsa='l -Al'
 alias ldot='l -d .?* 2>/dev/null'
 alias p='ps auf'
 
+alias -g GREP=' | grep '
 alias -g WC=' | wc '
 
 alias api="sudo apt install"
@@ -66,6 +67,21 @@ alias apug="sudo apt upgrade"
 alias apud="sudo apt update && sudo apt dist-upgrade"
 alias apuu="sudo apt update && sudo apt upgrade"
 alias apuuy="sudo apt update && sudo apt upgrade -y"
+
+alias g='git'
+alias gs='git status'
+alias gl='git log'
+alias gd='git diff'
+alias gd-c='git diff --cached'
+alias ga='git add'
+alias ga.='git add .'
+alias gc='git commit'
+alias gc-m='git commit -m'
+alias gp='git pull --rebase --autostash'
+alias gb='git branch'
+alias gsw='git switch'
+alias gsw-c='git switch -c'
+alias gr='git restore'
 
 # mkdirとcdを同時実行
 function mkcd() {
