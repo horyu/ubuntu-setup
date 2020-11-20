@@ -52,6 +52,7 @@ alias ll='l -l'
 alias lsa='l -Al'
 alias ldot='l -d .?* 2>/dev/null'
 alias p='ps auf'
+alias v='vim'
 
 alias -g GREP=' | grep '
 alias -g WC=' | wc '
