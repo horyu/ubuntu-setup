@@ -1,5 +1,5 @@
 # anyenv (PATHは.zshenv)
-eval "$(anyenv init - --no-rehash)"
+eval "$(anyenv init - zsh --no-rehash)"
 # eval "$(anyenv init - zsh)"
 
 # 特殊キー
