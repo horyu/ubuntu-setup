@@ -125,6 +125,11 @@ function repeat_last_command() {
 zle -N repeat_last_command
 bindkey '^G' repeat_last_command
 
+# .git があるディレクトリへ cd
+function cdg() {
+  cd "$(git rev-parse --show-toplevel)"
+}
+
 # Ctrl+S（画面出力の停止）を禁止
 if [[ -t 0 ]]; then
   stty stop undef
