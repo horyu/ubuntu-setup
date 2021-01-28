@@ -71,6 +71,7 @@ alias apuuy="sudo apt update && sudo apt upgrade -y"
 
 alias g='git'
 alias gs='git status'
+alias gsh='git stash'
 alias gl='git log'
 alias gl-o='git log --oneline'
 alias gd='git diff'
