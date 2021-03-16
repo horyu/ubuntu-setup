@@ -70,7 +70,7 @@ alias apuu="sudo apt update && sudo apt upgrade"
 alias apuuy="sudo apt update && sudo apt upgrade -y"
 
 alias g='git'
-alias gs='git status'
+alias gs='git status -sb'
 alias gsh='git stash'
 alias gsh-u='git stash -u'
 alias gl='git log'
