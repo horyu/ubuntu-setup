@@ -1,4 +1,4 @@
 REPO_NAME="ubuntu-setup" &&
-wget https://github.com/horyu/$REPO_NAME/archive/master.tar.gz &&
+wget "https://github.com/horyu/$REPO_NAME/archive/master.tar.gz" &&
 tar -xzvf master.tar.gz &&
 bash $REPO_NAME-master/setup.sh
