@@ -13,9 +13,19 @@ bindkey "^[[1;5D"  backward-word
 
 # 色を使用
 autoload -Uz colors; colors
+# プロンプトを表示する際に変数を展開
+setopt prompt_subst
 # プロンプト
-PROMPT="%{${fg[green]}%}[%d]%{${reset_color}%}
-"
+function check_last_exit_code() {
+  if [[ $? -eq 0 ]]; then
+    echo "%{${fg[green]}%}[%d]%{${reset_color}%}"
+  else
+    echo "%{${fg[red]}%}[%d]%{${reset_color}%}"
+  fi
+}
+PROMPT='$(check_last_exit_code)
+'
+
 # 日本語を使用
 export LANG=ja_JP.UTF-8
 
