@@ -16,34 +16,6 @@ puts "install fzf"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 source ~/.fzf.bash
 
-puts "install anyenv"
-git clone https://github.com/anyenv/anyenv ~/.anyenv
-echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.profile
-echo 'eval "$(anyenv init -)"' >> ~/.profile
-source ~/.profile
-anyenv install --init
-mkdir -p $(anyenv root)/plugins
-git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
-
-puts "install rbenv"
-while true; do
-  echo -n "Do you want to install rbenv and ruby?  ([y]/n) "
-  read -n1 ans
-  if [[ $ans =~ ^(y|Y|)$ ]]; then
-    anyenv install rbenv
-    source ~/.profile
-    anyenv install --init
-    tag_ver=$(rbenv install -l | fzf)
-    if [[ -n $tag_ver ]]; then
-      rbenv install $tag_ver
-      rbenv global $tag_ver
-    fi
-    break
-  elif [ $ans == "n" ]; then
-    break
-  fi
-done
-
 puts "change shell"
 chsh -s $(which zsh)
 

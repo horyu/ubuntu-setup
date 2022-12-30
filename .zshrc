@@ -1,6 +1,3 @@
-# anyenv (PATHは.zshenv)
-eval "$(anyenv init - zsh --no-rehash)"
-# eval "$(anyenv init - zsh)"
 
 # 特殊キー
 bindkey "^[[1~" beginning-of-line
