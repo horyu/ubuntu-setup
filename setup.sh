@@ -19,6 +19,9 @@ source ~/.fzf.bash
 puts "change shell"
 chsh -s $(which zsh)
 
+puts "set the default editor for Git to vim"
+git config --global core.editor vim
+
 puts "set DOTFILES"
 HERE=$(cd `dirname $0` && pwd)
 DOTFILES=( .fzf.zsh .gemrc .pryrc .selected_editor .vimrc .zshenv .zshrc )
