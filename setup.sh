@@ -24,7 +24,7 @@ git config --global core.editor vim
 
 puts "set DOTFILES"
 HERE=$(cd `dirname $0` && pwd)
-DOTFILES=( .fzf.zsh .gemrc .pryrc .selected_editor .vimrc .zshenv .zshrc )
+DOTFILES=( .fzf.zsh .gemrc .pryrc .selected_editor .vimrc .zshenv .zshrc .zlogout )
 for f in ${DOTFILES[@]}; do
   mv -fv $HERE/$f $HOME
   # ln -sfv $HERE/$f $HOME
